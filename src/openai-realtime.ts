@@ -1,6 +1,6 @@
 import OpenAI from "openai";
 import WebSocket from "ws";
-import { AGENT_INSTRUCTIONS, SUBMIT_VISITOR_TOOL } from "./agent-prompt.js";
+import { AGENT_INSTRUCTIONS, OPENING_LINE, SUBMIT_VISITOR_TOOL } from "./agent-prompt.js";
 import { createWebSocketProxyAgent } from "./proxy.js";
 import { extractVisitorFields, mergeVisitorDrafts, type VisitorDraft } from "./transcript-extractor.js";
 import type { VisitorService } from "./visitor-service.js";
@@ -101,8 +101,7 @@ export class OpenAIRealtimeController implements RealtimeController {
       this.sendJson(ws, {
         type: "response.create",
         response: {
-          instructions:
-            "\u8bf7\u7528\u4e00\u53e5\u4e2d\u6587\u5f00\u573a\uff1a\u60a8\u597d\uff0c\u8bf7\u95ee\u8f66\u724c\u53f7\u591a\u5c11\uff0c\u4eca\u5929\u627e\u54ea\u5bb6\u516c\u53f8\uff0c\u4ec0\u4e48\u4e8b\u513f\uff1f",
+          instructions: `\u8bf7\u7528\u4e00\u53e5\u4e2d\u6587\u5f00\u573a\uff1a${OPENING_LINE}`,
         },
       });
     });
