@@ -6,3 +6,4 @@ dist/
 data/*.jsonl
 coverage/
 .nyc_output/
+DEFENSE_NOTES.md
