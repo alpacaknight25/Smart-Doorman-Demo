@@ -199,7 +199,3 @@ received OpenAI webhook event
 - 如果长句信息记录不全，检查是否出现 `[openai] transcript fallback updated` 和 `[openai] merged submit_visitor arguments`。服务端会优先使用模型工具参数，并用 Realtime 转写文本补齐缺失字段。
 - PowerShell 里 `curl` 是 `Invoke-WebRequest` 别名，建议用 `Invoke-RestMethod`。
 - PowerShell 中文 JSON 可能出现编码问题，本地测试命令使用 Unicode escape。
-
-## Demo 计时
-
-计时从 Agent 第一声开始，到企业微信群收到消息结束，不包含拨号振铃时间。录屏时建议同时展示手机通话、服务日志和企业微信群消息。
